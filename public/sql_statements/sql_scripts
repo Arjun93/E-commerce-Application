@@ -5,25 +5,23 @@ use ecommerce;
 show tables;
 
 create table user_credentials (
- username varchar(20),
- password varchar(20),
- role varchar(20),
- primary key(username)
-);
-
-insert into user_credentials values 
-("hsmith","smith","user");
-
-insert into user_credentials values 
-("tbucktoo","bucktoo","user");
-
-insert into user_credentials values 
-("jadmin","admin","administrator");
-
-create table user_answers (
+	firstname varchar(20),
+	lastname varchar(20),
+	address varchar(30),
+	city varchar(25),
+	state varchar(5),
+	zip varchar(10),
+	email varchar(20),
 	username varchar(20),
-	answer1 int, feedback1 varchar(100),
-	answer2 int, feedback2 varchar(100),
-	answer3 int, feedback3 varchar(100)
+	password varchar(15),
+	role varchar(20)
 );
 
+insert into user_credentials values 
+("Henry","Smith","Centre Avenue","Pittsburgh","PA","15213","henry@gmail.com","hsmith","smith","user");
+
+insert into user_credentials values 
+("Tim","Bucktoo","Centre Avenue","Pittsburgh","PA","15213","tbucktoo@gmail.com","tbucktoo","bucktoo","user");
+
+insert into user_credentials values 
+("Jenny","Admin","Centre Avenue","Pittsburgh","PA","15213","jenny@gmail.com","jadmin","admin","user");
