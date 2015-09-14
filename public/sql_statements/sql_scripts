@@ -5,6 +5,7 @@ use ecommerce;
 show tables;
 
 create table user_credentials (
+	id MEDIUMINT NOT NULL AUTO_INCREMENT,
 	firstname varchar(20),
 	lastname varchar(20),
 	address varchar(30),
@@ -14,14 +15,16 @@ create table user_credentials (
 	email varchar(20),
 	username varchar(20),
 	password varchar(15),
-	role varchar(20)
+	role varchar(20),
+	PRIMARY KEY (id),
+	UNIQUE (username)
 );
 
-insert into user_credentials values 
-("Henry","Smith","Centre Avenue","Pittsburgh","PA","15213","henry@gmail.com","hsmith","smith","user");
+insert into user_credentials (firstname,lastname,address,city,state,zip,email,username,password,role) values 
+("Henry","Smith","Centre Avenue","Pittsburgh","PA","15213","henry@gmail.com","hsmith","smith","customer");
 
-insert into user_credentials values 
-("Tim","Bucktoo","Centre Avenue","Pittsburgh","PA","15213","tbucktoo@gmail.com","tbucktoo","bucktoo","user");
+insert into user_credentials (firstname,lastname,address,city,state,zip,email,username,password,role) values 
+("Tim","Bucktoo","Centre Avenue","Pittsburgh","PA","15213","tbucktoo@gmail.com","tbucktoo","bucktoo","customer");
 
-insert into user_credentials values 
-("Jenny","Admin","Centre Avenue","Pittsburgh","PA","15213","jenny@gmail.com","jadmin","admin","user");
+insert into user_credentials (firstname,lastname,address,city,state,zip,email,username,password,role) values 
+("Jenny","Admin","Centre Avenue","Pittsburgh","PA","15213","jenny@gmail.com","jadmin","admin","admin");

@@ -24,22 +24,18 @@ router.post('/', function(req, res, next) {
   var passWord = req.query.pWord;
   console.log("Before insertion!");
   var validationResult = validateUserInformation(firstName,lastName,userAddress,userCity,userState,userZip,userEmail,userName,passWord);
-  if(validationResult == true) {
-  	insertUserInformation(firstName,lastName,userAddress,userCity,userState,userZip,userEmail,userName,passWord);
-  	res.json({"message":"Your account has been registered"});
-  }
-  else {
-  	res.json({"message":"there was a problem with your registration"});
-  }
+  insertUserInformation(firstName,lastName,userAddress,userCity,userState,userZip,userEmail,userName,passWord,res,validationResult);
 });
 
 function validateUserInformation(firstName,lastName,userAddress,userCity,userState,userZip,userEmail,userName,passWord) {
 	var validationFlag = 0;
 	if (firstName == "" || lastName =="" || userAddress =="" || userCity =="" ||userState == "" || userZip == "" || userEmail == "" || userName == "" || passWord == "" ) {
 		validationFlag = 1;
+		console.log("Validation Error");
 	}
 	if (userState.length != 2 || userZip.length != 5) {
 		validationFlag = 1;
+		console.log("Validation Error");
 	}
 	if (validationFlag == 1) {
 		return false;
@@ -51,7 +47,7 @@ function validateUserInformation(firstName,lastName,userAddress,userCity,userSta
 }
 
 
-function insertUserInformation(firstName,lastName,userAddress,userCity,userState,userZip,userEmail,userName,passWord) {
+function insertUserInformation(firstName,lastName,userAddress,userCity,userState,userZip,userEmail,userName,passWord,res,validationResult) {
 	console.log("inside Insert!!");
 	var insertData = {
 	    firstname: firstName,
@@ -65,12 +61,20 @@ function insertUserInformation(firstName,lastName,userAddress,userCity,userState
 		password: passWord,
 		role: "user",    
   	};
-	connection.query('INSERT INTO user_credentials set ? ',insertData,function(err,rows) {            
-    if(err) {
-      console.log("Error Selecting : %s ",err );
-    }
-
-  });
+  	if(validationResult == true) {
+  		connection.query('INSERT INTO user_credentials set ? ',insertData,function(err,rows) {            
+		    if(err) {
+		      res.json({"message":"there was a problem with your registration"});
+		      console.log("Error Selecting : %s ",err );
+		    }
+		    else {
+		      res.json({"message":"Your account has been registered"});	
+		    }
+  		});
+  	}
+  	else {
+  		res.json({"message":"there was a problem with your registration"});
+  	}
 }
 
 module.exports = router;
