@@ -12,7 +12,6 @@ var connection = mysql.createConnection({
 });
 
 router.post('/', function(req, res, next) {
-  console.log("Inside post!!");
   var firstName = req.query.fName;
   var lastName = req.query.lName;
   var userAddress = req.query.address;
@@ -22,7 +21,7 @@ router.post('/', function(req, res, next) {
   var userEmail = req.query.email;
   var userName = req.query.uName;
   var passWord = req.query.pWord;
-  console.log("Before insertion!");
+ 
   var validationResult = validateUserInformation(firstName,lastName,userAddress,userCity,userState,userZip,userEmail,userName,passWord);
   insertUserInformation(firstName,lastName,userAddress,userCity,userState,userZip,userEmail,userName,passWord,res,validationResult);
 });

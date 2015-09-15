@@ -13,15 +13,14 @@ var connection = mysql.createConnection({
 
 /*Homescreen - login - post method*/
 router.post('/', function(req, res, next) {
-  var user_name = req.query.username;
+  var userName = req.query.username;
   var password = req.query.password;
-  validate_login_credentials(user_name,password,req,res);
+  validate_login_credentials(userName,password,req,res);
 });
 
-function validate_login_credentials(user_name,password,req,res) {
-  req.session.end_user = user_name;
-  var login_result = false;
-  connection.query('SELECT * FROM user_credentials where username = ? AND password = ?',[user_name,password],function(err,rows) {            
+function validate_login_credentials(userName,password,req,res) {
+  req.session.endUser = userName;
+  connection.query('SELECT * FROM user_credentials where username = ? AND password = ?',[userName,password],function(err,rows) {            
     if(err) {
       console.log("Error Selecting : %s ",err );
     }
