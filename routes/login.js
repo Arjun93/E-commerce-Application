@@ -19,20 +19,30 @@ router.post('/', function(req, res, next) {
 });
 
 function validate_login_credentials(userName,password,req,res) {
-  req.session.endUser = userName;
-  connection.query('SELECT * FROM user_credentials where username = ? AND password = ?',[userName,password],function(err,rows) {            
-    if(err) {
-      console.log("Error Selecting : %s ",err );
-    }
-    if(rows.length > 0) {
-        console.log("user");
-        res.json({"err_message":"You are logged in","menu":"menu item 1, menu item 2","Session ID":""+req.sessionID});
+  if(req.session.endUser) {
+    if(req.session.endUser == userName) {
+      res.json({"err_message":"You are already logged in"});
     }
     else {
-      console.log("auth fail!!!");
-      res.json({"err_message":"That username and password combination was not correct","menu":"menu item 1, menu item 2","Session ID":""+req.sessionID});
+      res.json({"err_message":"Another user already logged in"});
     }
-  });
+  }
+  else {
+    req.session.endUser = userName;
+    connection.query('SELECT * FROM user_credentials where username = ? AND password = ?',[userName,password],function(err,rows) {            
+      if(err) {
+        console.log("Error Selecting : %s ",err );
+      }
+      if(rows.length > 0) {
+          console.log("user");
+          res.json({"err_message":"You are logged in","menu":"menu item 1, menu item 2","Session ID":""+req.sessionID});
+      }
+      else {
+        console.log("auth fail!!!");
+        res.json({"err_message":"That username and password combination was not correct","menu":"menu item 1, menu item 2","Session ID":""+req.sessionID});
+      }
+    });
+  }
 }
 
 

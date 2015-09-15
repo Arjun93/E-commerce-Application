@@ -15,7 +15,6 @@ router.post('/', function(req, res, next) {
   var userInputSessionId = req.query.sessionID;
   var userSessionId = req.sessionID;
   var isInputFormatCorrect = true;
-  
   if(userInputSessionId === userSessionId) {
   	var currentUser = req.session.endUser;
 	var firstName = req.query.fName;
@@ -75,7 +74,7 @@ router.post('/', function(req, res, next) {
 	finalQuery = finalQuery+ " WHERE username='"+currentUser+"'";
 	
 	if (isInputFormatCorrect == true) {
-		updateInformation(finalQuery,res);
+		updateInformation(userName,finalQuery,req,res);
 	}
 	else {
 	    res.json({"message":"There was a problem with this action"});
@@ -86,7 +85,7 @@ router.post('/', function(req, res, next) {
   }
 });
 
-function updateInformation(finalQuery,res) {
+function updateInformation(userName,finalQuery,req,res) {
 	var query = finalQuery;
 	connection.query(query,function(err,rows) {            
 	    if(err) {
@@ -94,6 +93,11 @@ function updateInformation(finalQuery,res) {
 	      res.json({"message":"There was a problem with this action"});
 	    }
 	    else {
+	      if(query.indexOf(userName) != -1) {
+	      	req.session.endUser = userName;
+	      	var meUser = req.session.endUser;
+	      	console.log("New User Name: "+meUser);
+	      }
 	      res.json({"message":"Your information has been updated"});
 	    }
 	        
