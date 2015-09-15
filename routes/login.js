@@ -13,9 +13,9 @@ var connection = mysql.createConnection({
 
 /*Homescreen - login - post method*/
 router.post('/', function(req, res, next) {
-  var userName = req.query.username;
-  var password = req.query.password;
-  validate_login_credentials(userName,password,req,res);
+    var userName = req.query.username;
+    var password = req.query.password;
+    validate_login_credentials(userName,password,req,res);
 });
 
 function validate_login_credentials(userName,password,req,res) {

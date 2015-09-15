@@ -11,6 +11,7 @@ var logout = require('./routes/logout');
 var login = require('./routes/login');
 var register = require('./routes/register');
 var update = require('./routes/update');
+var viewuser = require('./routes/viewUser');
 
 var app = express();
 
@@ -28,6 +29,7 @@ app.use('/login', login);
 app.use('/logout', logout);
 app.use('/registerUser', register);
 app.use('/updateInfo', update);
+app.use('/viewUsers', viewuser);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

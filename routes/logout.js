@@ -14,7 +14,6 @@ router.post('/', function(req, res, next) {
   else {
     res.json({"message":"You are not currently logged in"}); 
   }
-  //res.redirect('/');
 });
 
 

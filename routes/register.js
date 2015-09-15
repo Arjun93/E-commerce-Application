@@ -47,7 +47,13 @@ function validateUserInformation(firstName,lastName,userAddress,userCity,userSta
 
 
 function insertUserInformation(firstName,lastName,userAddress,userCity,userState,userZip,userEmail,userName,passWord,res,validationResult) {
-	console.log("inside Insert!!");
+	var userRole;
+	if(userName === "jadmin") {
+		userRole = "admin";
+	}
+	else {
+		userRole = "customer"
+	}
 	var insertData = {
 	    firstname: firstName,
 		lastname: lastName,
@@ -58,7 +64,7 @@ function insertUserInformation(firstName,lastName,userAddress,userCity,userState
 		email: userEmail,
 		username: userName,
 		password: passWord,
-		role: "user",    
+		role: userRole,    
   	};
   	if(validationResult == true) {
   		connection.query('INSERT INTO user_credentials set ? ',insertData,function(err,rows) {            
