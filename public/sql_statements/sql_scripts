@@ -28,3 +28,22 @@ insert into user_credentials (firstname,lastname,address,city,state,zip,email,us
 
 insert into user_credentials (firstname,lastname,address,city,state,zip,email,username,password,role) values 
 ("Jenny","Admin","Centre Avenue","Pittsburgh","PA","15213","jenny@gmail.com","jadmin","admin","admin");
+
+create table product_information (
+	product_id varchar(5) PRIMARY KEY,
+	product_asin varchar(15),
+	product_title varchar(150),
+	product_group varchar(20),
+	product_description varchar(150),
+	product_no_of_categories varchar(4)
+);
+
+create table category_information (
+	category_name varchar(60),
+	category_id varchar(10) PRIMARY KEY
+);
+
+create table product_category_information (
+	product_id varchar(20),
+	category_id varchar(20)
+);

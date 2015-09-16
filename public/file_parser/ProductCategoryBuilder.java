@@ -68,11 +68,7 @@ public class ProductCategoryBuilder{
             /*myBufferedWriter.write(currentIdCategories.toString());*/
          }
       }
-
-      /*for(int i = 0; i < idLinkedList.size();i++) {
-         System.out.println(""+idLinkedList.get(i)+"  "+categoriesLinkedList.get(i));
-      }*/
-
+      
 
       myBufferedReader.close();
       myBufferedWriter.close();
