@@ -1,0 +1,504 @@
+Subjects	1000
+Programming	3839
+Occultism	12714
+Cartoon Network	290410
+Professional	4254
+Spirituality	12809
+Finance & Investing	767872
+Scooby Doo Mysteries	918102
+Ministry	12364
+Southern Rock	497322
+Contemporary	10129
+Jonny Quest	266100
+Twain, Mark	70670
+Burkley, Dennis	142653
+Advanced Mechanics	226500
+School & Education	3192
+Featured Composers, A-Z	5338
+Dictionaries & Thesauruses	11475
+Remodeling & Renovation	5328
+Musicals & Performing Arts	508526
+Hardware	549652
+Travel Books	639538
+Brahms, Johannes	11397
+Infantil y juvenil	301735
+Christian Living	12333
+Love & Romance	4733
+Politics	11079
+Cabot, Sebastian	416132
+Addiction & Alcoholism	740020
+Faith	12339
+Broadway & Vocalists	265640
+Today's Deals in Video	292355
+Performing Arts	521000
+Fantasy	17468
+Ages 9-12	266232
+Duryea, Dan	145628
+Music for Travelers	641094
+( L )	432148
+( S )	58403
+Appreciation & History	491372
+Deals Under $20	734044
+By Theme	168482
+Options	767988
+Jesus	266237
+( M )	152234
+Concertos	36636
+Latin Music	641618
+Amazon.com Label Stores	301122
+Art	11716
+Scooby-Doo Mystery	281836
+Professionals & Academics	2419
+Babenco, Hector	454408
+( K )	150127
+Movies	4484
+Genres	404274
+Digital Business & Culture	768606
+All Disney Titles	300375
+Psychological Drama	740040
+( J )	7280
+Schoolhouse Rock	292340
+( E )	297876
+10-12 Years	300278
+( D )	144551
+Mimieux, Yvette	437458
+Europe	491414
+Phenomenology	11063
+Deals Under $15	734042
+Teens	28
+Human Resources & Personnel Management	767920
+Business & Investing	3
+Vocal Jazz General	63934
+Slang & Idioms	11619
+Hospice Care	14258
+Basketball	494018
+( B )	39670
+7-9 Years	300277
+World Literature	10311
+Kilmer, Val	150602
+Law Practice	227492
+Frees, Paul	423942
+( C )	142797
+Diets	4615
+Gay & Lesbian	301889
+Professional Cooking	4251
+Finance	767866
+Wyatt, Jane	161832
+Science Fiction, Fantasy, & Magic	3017
+Concertinos	36637
+Photography Books	733540
+Crime & Criminals	11003
+Bibles	12059
+Scotland	639936
+Special Diet	4317
+Portuguese	573530
+Camera & Photo	502394
+Dogs	2812
+Historiography	4988
+Reference	21
+Superheroes	3825121
+Business Life	2558
+Books, Music & More	559958
+Authorship	11892
+Investing	767974
+Easwaran, Eknath	297948
+Art House & International	163313
+Project Management	768626
+Wincott, Michael	161589
+DVDs Under $15	1038542
+Foreign Languages	11773
+Warner Home Video	515794
+Special Features	498864
+History	9
+Samba	641620
+Dillon, Kevin	145163
+Radio	4564
+Relationships	4729
+Industries & Professions	767882
+Pediatrics	227660
+Vocal Jazz	520230
+Encyclopedias	11713
+( T )	70041
+Coming of Age	572062
+Christmas	3072
+Telecommunications	13809
+Authors, A-Z	70021
+African American	4301
+Epistemology	11035
+Mysteries, Espionage, & Detectives	3016
+Physician & Patient	14245
+Gastronomy	4229
+Stone, Oliver	167801
+Fitzgerald, Barry	146404
+History & Criticism	4511
+Pediatric & Neonatal	14231
+Pop Culture	11751
+Babies & Toddlers	11403
+Specialties	225827
+Company Profiles	767746
+Low-Fat Diet	282849
+Album-Oriented Rock (AOR)	408254
+Mystery	10457
+Financial Planning	768062
+Essays	4464
+Authors & Illustrators, A-Z	170540
+Family Relationships	11370
+Discipleship	12335
+New Yorker Films	764560
+Madsen, Michael	152359
+Animation	169045
+Accounting & Finance	173509
+Engineering Economics	226701
+Other Eastern Religions	12735
+Administration & Medicine Economics	227560
+Grant, Cary	147686
+Diabetic & Sugar-Free	4318
+Humor	4456
+Amazon.com Outlet	517808
+Fiction	3113
+Obsessions	513038
+Bissell, Whit	413160
+Bebes a 3 años	301738
+Breastfeeding Books	692272
+Lesbian Studies	11308
+Titles	579510
+Wicca	12484
+Travel	605012
+For the Whole Family	301902
+Idol, Billy	149446
+Literature & Fiction	17
+Church History	12350
+Cooking, Food & Wine	6
+Children's Books	2247
+New England	640518
+Law	173518
+20th Century	9972
+Modern	11057
+Violin	38469
+Sherlock Holmes	10477
+Kids in Trouble	740178
+Whitman, Walt	70700
+Horror	49
+Magic	12710
+Marriage	69722
+Special Groups	11298
+New & Used Textbooks	465600
+Mechanical	13778
+Polish	11847
+Classic Rock	67204
+Web Programming	4021
+New Age	12621
+Drama	129
+Betsy & Tacy	3307
+Maberly to Mazzello	769018
+Mechanics	226524
+Preaching	12368
+Video Outlet	735448
+Food & Lodging	640090
+Languages & Tools	3952
+Poetry	9966
+Mothers & Sons	740062
+Biographies	3103
+Issues	1084192
+Soderling, Walter	158751
+Music	5174
+Kids & Family	132
+English (All)	11486
+Study Guides, History & Reference	764438
+Regional & International	4262
+Classics	10127
+Specialty Stores	468040
+Civil	13663
+Security	768636
+Witchcraft	12486
+Crafts & Hobbies	5126
+Computers & Internet	5
+Card Games	4409
+Spine-Chilling Horror	3018
+Boulton, Matthew	142037
+Modern Postbebop	63929
+Literature	2966
+Whaley, Frank	161234
+Down on Their Luck	740136
+World War II	5031
+Popular Culture	3011
+Urban	11296
+Inspirational	12422
+Single Authors	10285
+South & Central America	641126
+Ages 4-8	266231
+Mystery & Detective	3360
+( R )	156323
+Naval	465318
+Art & Music	468208
+Dining	640094
+Folklore & Mythology	11256
+Seventh Heaven	280275
+Coulouris, George	144211
+Internal Medicine	225828
+Action & Adventure	2967
+Reference & Nonfiction	3176
+Low Sugar	4642
+Mystery & Thrillers	18
+United Kingdom	579580
+Strings	38439
+Medicine	13996
+Occult	12689
+Rocky Mountains	290094
+Berlin Philharmonic Orchestra	40626
+Aging Parents	11352
+Historical Study	4987
+Diets & Weight Loss	4613
+Secrets of Success	767772
+By Country	284926
+( N )	579538
+Regional	290082
+Monsters & Mutants	292662
+Occupational & Organizational	11189
+7-11 Years	301901
+Bible & Other Sacred Texts	12056
+U.S. Regional	4300
+Fairy Tales, Folk Tales & Myths	2977
+Clergy	12360
+Holidays & Festivals	3069
+Management Science	768002
+( Q )	156257
+Americas	4808
+Anthropology	11233
+Labels	892976
+Instruments	38374
+Herbs, Spices & Condiments	4211
+Quinlan, Kathleen	156298
+( P )	579542
+Radiology	227708
+Home Design	5319
+Alternative & Holistic	14038
+Professional & Technical	173507
+Photography	2020
+Practical Guides	173483
+Hospitality, Travel & Tourism	767918
+Live Albums	554478
+Graphic Novels	4390
+Great Britain	639912
+Doyle, Arthur Conan	287265
+Classic Sci-Fi	292650
+Musicals	169351
+Entertainment	86
+Military	5011
+Literature Guides	11399
+Active Server Pages	3601
+International	171245
+Breastfeeding	541568
+Bread	4197
+Jewish	4992
+Northeast	640512
+British Detectives	10461
+( G )	146925
+( F )	146055
+Doyle, Sir Arthur Conan	585790
+Business & Investing Books	767740
+James, Del	7312
+Stine, R. L.	281800
+Indie Music	266023
+Cooking by Ingredient	4208
+Americana	5067
+( H )	426368
+Movements	886134
+Short Stories	10300
+General Broadcasting	4566
+( I )	149429
+Alternative Medicine	4696
+Westerman, Floyd Red Crow	161217
+Industrial, Manufacturing & Operational Systems	13759
+Oncology	14361
+Sports	467970
+Comics & Graphic Novels	4366
+Christian	3114
+Eschatology	172812
+Futuristic	735728
+Home & Office	764512
+General	227561
+Parenting	11401
+Formats	504358
+19th Century	170082
+Sheldon, Jack	158248
+Disorders & Diseases	4656
+Low Carb	10924671
+Blues Rock	67203
+Birdwatching	16386
+By Original Language	193685
+Assessment & Diagnosis	227643
+Databases	549646
+Writing	12015
+Shayne, Konstantin	158210
+Marvel	4400
+Arts & Photography	1
+Memoirs	3048891
+Studi, Wes	159315
+Forms & Genres	36632
+Theology	12449
+Arena Rock	599868
+Children's Studies	3048861
+Actors & Actresses	140
+Administration & Policy	13998
+Instruction	11811
+Low Carbohydrate	4639
+Time Travel	292667
+Commentaries	12155
+Friendship	3153
+Personal Finance	768056
+Book Clubs	292203
+New Testament	572082
+Religions	3101
+Corporate Finance	767870
+Imports	701208
+Classical	85
+Barrymore, Ethel	141122
+Hackers	768618
+People & Places	3020
+Parenting & Families	20
+Deutsche Grammophon Records	886976
+T.Witches	918066
+Sermons	12370
+Biografías y memorias	301733
+Cancer	171141
+Worship & Devotion	12465
+Government	10753
+Directors	139
+Women's Studies	11325
+Animated Cartoons	301891
+Science Fiction & Fantasy	17466
+Humanities	468206
+Styles	301668
+Elections	10763
+Family Life	3045
+3-6 Years	301900
+Antiques & Collectibles	5066
+Biography	168508
+Engineering	13643
+Shaham, Gil	59342
+Small Business & Entrepreneurship	768100
+Jazz	171246
+Books & Reading	9988
+Traditional Vocal Pop	513060
+Rock	40
+C & C++	3956
+Siblings	3064
+Philosophy	11019
+Science Fiction, Fantasy, Mystery & Horror	3013
+DVD Outlet	734006
+Humorous	3003
+Foreign Language	11495
+Sociology	11288
+Science Fiction	17470
+Picture Books	170061
+Social Situations	3149
+Biographies & Memoirs	2
+Baking	4196
+U.S.	11117
+jp-unknown2	1061350
+jp-unknown1	1061348
+Books	283155
+Series	266680
+Computer & Internet Books	768162
+Social Sciences	11232
+Birds	290081
+Aerospace	226498
+Internet	768564
+Ryan, Meg	157461
+United States	10301
+Special Topics	14305
+Management	768000
+Pal, George	460622
+Publishers	4396
+Nutrition	14243
+Divination	12636
+Studio Specials	468374
+Taylor, Rod	449112
+Spy Stories & Tales of Intrigue	10493
+Nonfiction	53
+Libros en español	301731
+Feeding	541564
+Spanish	69810
+Thrillers	10484
+Science	75
+Translations	764432
+Christianity	12290
+Cultural	11235
+Health, Mind & Body	10
+Patent, Trademark & Copyright	227490
+History & Theory	11086
+Today's Deals in DVD	409298
+Psychology & Counseling	11119
+Tarot	12659
+Helmore, Tom	427584
+Monsters	513092
+Field Guides	290078
+Maclachlan, Kyle	152313
+Animals	2787
+Urban Life	740132
+Characters & Series	169207
+Bogosian, Eric	70116
+Middle Atlantic	4309
+( Y )	453438
+Photo Essays	733676
+Hockey	494044
+( W )	160685
+Nursing	227640
+Medical	173514
+By Age	301898
+Lloyd, Doris	433832
+Manager's Guides to Computing	768660
+Criticism & Theory	10207
+Protestantism	12404
+Business	297488
+Retirement Planning	768068
+Pentecostal	12438
+Parent & Adult Child	11390
+Paperback	285693
+All Titles	407860
+Life Application	572080
+Low Fat	4323
+Twins	1084244
+Brazil	641140
+Featured Performers, A-Z	38472
+Childhood Drama	740122
+Stories	3002
+History of Technology	14637
+Games	4402
+Management & Leadership	767992
+Theater	2154
+Young, Alan	453620
+Technology	14631
+Books, Music & Videos for Parents	692266
+Bible	764430
+Radio Shows	2312
+Outdoors & Nature	290060
+Criminology	11005
+Human Geography	11272
+Biographies & Primers	767742
+Costume Adventures	502980
+South	640520
+Categories	3074321
+Mathematics	13884
+Intellectual Property	227486
+All New Yorker Titles	764562
+Books on Tape	44
+Publishing & Books	11891
+Television	11757
+Popular Fiction	400096
+Prayerbooks	12470
+Multilingual	69802
+Disney Home Video	300374
+Earth-Based Religions	12472
+Latin American Cinema	764566
+Regions	640504
+All Works by Brahms	11426
+Fantasy & Adventure	3328
+Children	502938
+Artists & Writers	740030
+Microprocessors & System Design	3723
+Bohnen, Roman	141883
+Home & Garden	48
+Religion & Spirituality	22
+Special Conditions	4632
