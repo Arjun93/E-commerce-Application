@@ -3,8 +3,8 @@ var router = express.Router();
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({
-  host     : 'localhost',
-  //host     : 'quizapp.ccwtwgtut47e.us-east-1.rds.amazonaws.com',
+  //host     : 'localhost',
+  host     : 'quizapp.ccwtwgtut47e.us-east-1.rds.amazonaws.com',
   //port : '3306',
   user     : 'root',
   password : '12312312', 
@@ -35,7 +35,13 @@ function validate_login_credentials(userName,password,req,res) {
       }
       if(rows.length > 0) {
           console.log("user");
-          res.json({"err_message":"You are logged in","menu":"menu item 1, menu item 2","Session ID":""+req.sessionID});
+          if(userName === "jadmin") {
+            res.json({"message":"You are logged in","menu":"Login, Logout, Update contact information, Modify products, View Users, View products","Session ID":""+req.sessionID});
+          }
+          else {
+            res.json({"message":"You are logged in","menu":"Login, Logout, Update contact information, View products","Session ID":""+req.sessionID});
+          }
+  
       }
       else {
         console.log("auth fail!!!");

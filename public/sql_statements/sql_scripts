@@ -47,3 +47,11 @@ create table product_category_information (
 	product_id varchar(20),
 	category_id varchar(20)
 );
+
+mysql --local-infile -u root -p
+
+LOAD DATA LOCAL INFILE 'public/file_parser/Product.txt' INTO TABLE product_information;
+
+LOAD DATA LOCAL INFILE 'public/file_parser/Category.txt' INTO TABLE category_information;
+
+LOAD DATA LOCAL INFILE 'public/file_parser/ProductCategory.txt' INTO TABLE product_category_information;
