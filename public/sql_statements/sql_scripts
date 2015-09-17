@@ -34,8 +34,8 @@ create table product_information (
 	product_asin varchar(15),
 	product_title varchar(150),
 	product_group varchar(20),
-	product_description varchar(150),
-	product_no_of_categories varchar(4)
+	product_no_of_categories varchar(4),
+	product_description varchar(150)
 );
 
 create table category_information (

@@ -3,7 +3,7 @@ var router = express.Router();
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({
-  //host     : 'localhost',
+  host     : 'localhost',
   host     : 'quizapp.ccwtwgtut47e.us-east-1.rds.amazonaws.com',
   //port : '3306',
   user     : 'root',
@@ -15,7 +15,13 @@ var connection = mysql.createConnection({
 router.post('/', function(req, res, next) {
     var userName = req.query.username;
     var password = req.query.password;
-    validate_login_credentials(userName,password,req,res);
+    if(typeof userName == 'undefined' || typeof password == 'undefined' || userName == "" || password == "") {
+      res.json({"err_message":"Not sufficient information"});
+      req.session.endUser="";
+    }
+    else {
+      validate_login_credentials(userName,password,req,res);
+    }
 });
 
 function validate_login_credentials(userName,password,req,res) {
@@ -35,6 +41,7 @@ function validate_login_credentials(userName,password,req,res) {
       }
       if(rows.length > 0) {
           console.log("user");
+          //req.session.endUser = userName;
           if(userName === "jadmin") {
             res.json({"message":"You are logged in","menu":"Login, Logout, Update contact information, Modify products, View Users, View products","Session ID":""+req.sessionID});
           }
@@ -45,7 +52,7 @@ function validate_login_credentials(userName,password,req,res) {
       }
       else {
         console.log("auth fail!!!");
-        res.json({"err_message":"That username and password combination was not correct","menu":"menu item 1, menu item 2","Session ID":""+req.sessionID});
+        res.json({"err_message":"That username and password combination was not correct"});
       }
     });
   }

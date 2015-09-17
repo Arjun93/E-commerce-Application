@@ -6,6 +6,8 @@ var mysql = require('mysql');
 router.post('/', function(req, res, next) {
   var userInputSessionId = req.query.sessionID;
   var userSessionId = req.sessionID;
+  console.log(userInputSessionId);
+  console.log(userSessionId);
   
   if (userInputSessionId === userSessionId) {
     res.json({"message":"You have been logged out"});
@@ -15,6 +17,5 @@ router.post('/', function(req, res, next) {
     res.json({"message":"You are not currently logged in"}); 
   }
 });
-
 
 module.exports = router;
