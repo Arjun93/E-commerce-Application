@@ -52,6 +52,7 @@ function validate_login_credentials(userName,password,req,res) {
       }
       else {
         console.log("auth fail!!!");
+        req.session.endUser = "";
         res.json({"err_message":"That username and password combination was not correct"});
       }
     });
