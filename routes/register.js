@@ -36,6 +36,16 @@ function validateUserInformation(firstName,lastName,userAddress,userCity,userSta
 		validationFlag = 1;
 		console.log("Validation Error");
 	}
+	if (userEmail.indexOf('@') == -1) {
+		validationFlag = 1;
+		console.log("Validation Error");
+	}
+
+	if (userEmail.indexOf('.') == -1) {
+		validationFlag = 1;
+		console.log("Validation Error");
+	}
+
 	if (validationFlag == 1) {
 		return false;
 	}
