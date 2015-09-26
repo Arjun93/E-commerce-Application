@@ -3,8 +3,8 @@ var router = express.Router();
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({
-  //host     : 'localhost',
-  host     : 'quizapp.ccwtwgtut47e.us-east-1.rds.amazonaws.com',
+  host     : 'localhost',
+  //host     : 'quizapp.ccwtwgtut47e.us-east-1.rds.amazonaws.com',
   //port : '3306',
   user     : 'root',
   password : '12312312',
@@ -12,15 +12,15 @@ var connection = mysql.createConnection({
 });
 
 router.post('/', function(req, res, next) {
-  var firstName = req.query.fName;
-  var lastName = req.query.lName;
-  var userAddress = req.query.address;
-  var userCity = req.query.city;
-  var userState = req.query.state;
-  var userZip = req.query.zip;
-  var userEmail = req.query.email;
-  var userName = req.query.uName;
-  var passWord = req.query.pWord;
+  var firstName = req.body.fname;
+  var lastName = req.body.lname;
+  var userAddress = req.body.address;
+  var userCity = req.body.city;
+  var userState = req.body.state;
+  var userZip = req.body.zip;
+  var userEmail = req.body.email;
+  var userName = req.body.username;
+  var passWord = req.body.password;
  
   var validationResult = validateUserInformation(firstName,lastName,userAddress,userCity,userState,userZip,userEmail,userName,passWord);
   insertUserInformation(firstName,lastName,userAddress,userCity,userState,userZip,userEmail,userName,passWord,res,validationResult);

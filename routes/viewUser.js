@@ -3,8 +3,8 @@ var router = express.Router();
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({
-  //host     : 'localhost',
-  host     : 'quizapp.ccwtwgtut47e.us-east-1.rds.amazonaws.com',
+  host     : 'localhost',
+  //host     : 'quizapp.ccwtwgtut47e.us-east-1.rds.amazonaws.com',
   //port : '3306',
   user     : 'root',
   password : '12312312',
@@ -14,8 +14,10 @@ var connection = mysql.createConnection({
 router.get('/', function(req, res, next) {
   
   var userName = req.session.endUser;
-  var firstnamePattern = req.query.fName;
-  var lastnamePattern = req.query.lName;
+  var firstnamePattern = req.query.fname;
+  var lastnamePattern = req.query.lname;
+  console.log(firstnamePattern);
+  console.log(lastnamePattern);
   var query = "SELECT * FROM user_credentials";
   if(userName === "jadmin") {
   	if(firstnamePattern || lastnamePattern) {

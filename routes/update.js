@@ -3,8 +3,8 @@ var router = express.Router();
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({
-  //host     : 'localhost',
-  host     : 'quizapp.ccwtwgtut47e.us-east-1.rds.amazonaws.com',
+  host     : 'localhost',
+  //host     : 'quizapp.ccwtwgtut47e.us-east-1.rds.amazonaws.com',
   //port : '3306',
   user     : 'root',
   password : '12312312',
@@ -12,20 +12,22 @@ var connection = mysql.createConnection({
 });
 
 router.post('/', function(req, res, next) {
-  var userInputSessionId = req.query.sessionID;
+  var userInputSessionId = req.body.sessionID;
   var userSessionId = req.sessionID;
+  console.log(userInputSessionId);
+  console.log(userSessionId);
   var isInputFormatCorrect = true;
   if(userInputSessionId === userSessionId) {
   	var currentUser = req.session.endUser;
-	var firstName = req.query.fName;
-	var lastName = req.query.lName;
-	var userAddress = req.query.address;
-	var userCity = req.query.city;
-	var userState = req.query.state;
-	var userZip = req.query.zip;
-	var userEmail = req.query.email;
-	var userName = req.query.uName;
-	var passWord = req.query.pWord;
+	var firstName = req.body.fname;
+	var lastName = req.body.lname;
+	var userAddress = req.body.address;
+	var userCity = req.body.city;
+	var userState = req.body.state;
+	var userZip = req.body.zip;
+	var userEmail = req.body.email;
+	var userName = req.body.username;
+	var passWord = req.body.password;
 	var query = "UPDATE user_credentials SET";
 
 	if(typeof firstName != 'undefined') {
@@ -77,10 +79,12 @@ router.post('/', function(req, res, next) {
 		updateInformation(userName,finalQuery,req,res);
 	}
 	else {
+		console.log("Validation error");
 	    res.json({"message":"There was a problem with this action"});
 	}
   }
   else {
+  	console.log("Session Id mismatch");
   	res.json({"message":"There was a problem with this action"});
   }
 });
@@ -89,6 +93,7 @@ function updateInformation(userName,finalQuery,req,res) {
 	var query = finalQuery;
 	connection.query(query,function(err,rows) {            
 	    if(err) {
+	    console.log(query);
 	      console.log("Error Selecting : %s ",err );
 	      res.json({"message":"There was a problem with this action"});
 	    }

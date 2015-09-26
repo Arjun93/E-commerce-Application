@@ -4,7 +4,7 @@ var mysql = require('mysql');
 
 /*Handling logout*/
 router.post('/', function(req, res, next) {
-  var userInputSessionId = req.query.sessionID;
+  var userInputSessionId = req.body.sessionID;
   var userSessionId = req.sessionID;
   console.log(userInputSessionId);
   console.log(userSessionId);

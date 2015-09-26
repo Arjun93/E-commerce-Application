@@ -3,8 +3,8 @@ var router = express.Router();
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({
-  //host     : 'localhost',
-  host     : 'quizapp.ccwtwgtut47e.us-east-1.rds.amazonaws.com',
+  host     : 'localhost',
+  //host     : 'quizapp.ccwtwgtut47e.us-east-1.rds.amazonaws.com',
   //port : '3306',
   user     : 'root',
   password : '12312312',
@@ -14,11 +14,12 @@ var connection = mysql.createConnection({
 router.post('/', function(req, res, next) {
 	var userName = req.session.endUser;
 	if(userName === "jadmin") {
-		var productid = req.query.productId;
-		var productDesc = req.query.productDescription;
-		var productTitle = req.query.productTitle;
+		var productid = req.body.productId;
+		var productDesc = req.body.productDescription;
+		var productTitle = req.body.productTitle;
 		console.log(productid);
 		console.log(productTitle);
+		console.log(productDescription);
 
 		var query = "UPDATE product_information SET ";
 		console.log(query);

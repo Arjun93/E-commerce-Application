@@ -4,7 +4,7 @@ var mysql = require('mysql');
 
 var connection = mysql.createConnection({
   host     : 'localhost',
-  host     : 'quizapp.ccwtwgtut47e.us-east-1.rds.amazonaws.com',
+  //host     : 'quizapp.ccwtwgtut47e.us-east-1.rds.amazonaws.com',
   //port : '3306',
   user     : 'root',
   password : '12312312', 
@@ -13,8 +13,10 @@ var connection = mysql.createConnection({
 
 /*Homescreen - login - post method*/
 router.post('/', function(req, res, next) {
-    var userName = req.query.username;
-    var password = req.query.password;
+    var userName = req.body.username;
+    var password = req.body.password;
+    console.log(userName);
+    console.log(password);
     if(typeof userName == 'undefined' || typeof password == 'undefined' || userName == "" || password == "") {
       res.json({"err_message":"Not sufficient information"});
       req.session.endUser="";
