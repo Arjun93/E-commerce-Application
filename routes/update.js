@@ -20,7 +20,6 @@ router.post('/', function(req, res, next) {
   var sessionUserName = req.session.endUser;
   
   if (typeof sessionUserName != 'undefined') {
-  //if(userInputSessionId === userSessionId) {
   	var currentUser = req.session.endUser;
 	var firstName = req.body.fname;
 	var lastName = req.body.lname;
@@ -32,7 +31,7 @@ router.post('/', function(req, res, next) {
 	var userName = req.body.username;
 	var passWord = req.body.password;
 
-	console.log(firstName);
+	console.log(userName);
 
 	var query = "UPDATE user_credentials SET";
 
