@@ -42,6 +42,7 @@ function validate_login_credentials(userName,password,req,res) {
         console.log("Error Selecting : %s ",err );
       }
       if(rows.length > 0) {
+          req.session.cookie.maxAge = new Date(Date.now() + 15000);
           req.session.role = rows[0].role;
           var personRole = req.session.role;
           if(personRole == 'admin') {
@@ -49,8 +50,7 @@ function validate_login_credentials(userName,password,req,res) {
           }
           else {
             res.json({"message":"You are logged in","menu":"Login, Logout, Update contact information, View products","Session ID":""+req.sessionID});
-          }
-  
+          }  
       }
       else {
         console.log("auth fail!!!");

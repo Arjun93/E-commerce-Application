@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({ secret: 'quizapplication', resave: false, saveUninitialized: false }));
+app.use(session({ secret: 'quizapplication', resave: false, saveUninitialized: false, rolling:true }));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/login', login);

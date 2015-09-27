@@ -19,8 +19,6 @@ router.get('/', function(req, res, next) {
 	console.log(inputCategory);
 	console.log(inputKeyword);
 	var query="SELECT * FROM product_information ";
-	/*var query = "SELECT * FROM product_information ";
-	var innerQuery = "SELECT product_id FROM product_category_information WHERE "*/
 	
 	if(typeof inputKeyword != 'undefined' && inputKeyword!="") {
 		console.log("fetching description query");
