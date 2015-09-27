@@ -13,17 +13,17 @@ var connection = mysql.createConnection({
 
 router.post('/', function(req, res, next) {
 	var userName = req.session.endUser;
-	if(userName === "jadmin") {
+	var personRole = req.session.role;
+	if(personRole == 'admin') {
 		var productid = req.body.productId;
 		var productDesc = req.body.productDescription;
 		var productTitle = req.body.productTitle;
 		console.log(productid);
 		console.log(productTitle);
-		console.log(productDescription);
+		console.log(productDesc);
 
 		var query = "UPDATE product_information SET ";
-		console.log(query);
-
+		
 		if(typeof productDesc != 'undefined' && productDesc!="") {
 			 query += "product_description='"+productDesc+"',";
 		}

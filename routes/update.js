@@ -17,7 +17,10 @@ router.post('/', function(req, res, next) {
   console.log(userInputSessionId);
   console.log(userSessionId);
   var isInputFormatCorrect = true;
-  if(userInputSessionId === userSessionId) {
+  var sessionUserName = req.session.endUser;
+  
+  if (typeof sessionUserName != 'undefined') {
+  //if(userInputSessionId === userSessionId) {
   	var currentUser = req.session.endUser;
 	var firstName = req.body.fname;
 	var lastName = req.body.lname;
@@ -28,6 +31,9 @@ router.post('/', function(req, res, next) {
 	var userEmail = req.body.email;
 	var userName = req.body.username;
 	var passWord = req.body.password;
+
+	console.log(firstName);
+
 	var query = "UPDATE user_credentials SET";
 
 	if(typeof firstName != 'undefined') {
@@ -84,16 +90,16 @@ router.post('/', function(req, res, next) {
 	}
   }
   else {
-  	console.log("Session Id mismatch");
+  	console.log("User not logged in");
   	res.json({"message":"There was a problem with this action"});
   }
 });
 
 function updateInformation(userName,finalQuery,req,res) {
 	var query = finalQuery;
+	console.log(query);
 	connection.query(query,function(err,rows) {            
 	    if(err) {
-	    console.log(query);
 	      console.log("Error Selecting : %s ",err );
 	      res.json({"message":"There was a problem with this action"});
 	    }

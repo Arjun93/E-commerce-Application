@@ -16,10 +16,11 @@ router.get('/', function(req, res, next) {
   var userName = req.session.endUser;
   var firstnamePattern = req.query.fname;
   var lastnamePattern = req.query.lname;
+  var personRole = req.session.role;
   console.log(firstnamePattern);
   console.log(lastnamePattern);
   var query = "SELECT * FROM user_credentials";
-  if(userName === "jadmin") {
+  if(personRole == 'admin') {
   	if(firstnamePattern || lastnamePattern) {
   		query += " WHERE firstname LIKE '%"+firstnamePattern+"%' AND lastname LIKE '%"+lastnamePattern+"%'";
   		console.log(query);

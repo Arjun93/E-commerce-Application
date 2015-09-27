@@ -8,8 +8,10 @@ router.post('/', function(req, res, next) {
   var userSessionId = req.sessionID;
   console.log(userInputSessionId);
   console.log(userSessionId);
+  var userName = req.session.endUser;
   
-  if (userInputSessionId === userSessionId) {
+  if (typeof userName != 'undefined') {
+  //if (userInputSessionId === userSessionId) {
     res.json({"message":"You have been logged out"});
     req.session.destroy();
   }

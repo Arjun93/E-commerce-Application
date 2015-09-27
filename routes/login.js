@@ -42,9 +42,9 @@ function validate_login_credentials(userName,password,req,res) {
         console.log("Error Selecting : %s ",err );
       }
       if(rows.length > 0) {
-          console.log("user");
-          //req.session.endUser = userName;
-          if(userName === "jadmin") {
+          req.session.role = rows[0].role;
+          var personRole = req.session.role;
+          if(personRole == 'admin') {
             res.json({"message":"You are logged in","menu":"Login, Logout, Update contact information, Modify products, View Users, View products","Session ID":""+req.sessionID});
           }
           else {
