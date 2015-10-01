@@ -3,8 +3,8 @@ var router = express.Router();
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({
-  //host     : 'localhost',
-  host     : 'quizapp.ccwtwgtut47e.us-east-1.rds.amazonaws.com',
+  host     : 'localhost',
+  //host     : 'quizapp.ccwtwgtut47e.us-east-1.rds.amazonaws.com',
   port : '3306',
   user     : 'root',
   password : '12312312', 
@@ -38,13 +38,25 @@ function validate_login_credentials(userName,password,req,res) {
   else {
     req.session.endUser = userName;
     connection.query('SELECT * FROM user_credentials where username = ? AND password = ?',[userName,password],function(err,rows) {            
+      
       if(err) {
         console.log("Error Selecting : %s ",err );
       }
       if(rows.length > 0) {
           req.session.cookie.maxAge = new Date(Date.now() + 900000);
+          //req.session.cookie.maxAge = new Date(Date.now() + 6000);
           req.session.role = rows[0].role;
           var personRole = req.session.role;
+          var userSessionId = req.sessionID;
+
+          connection.query('UPDATE user_credentials SET sessionId = ? WHERE username = ?',[userSessionId,userName], function(err,rows) {
+
+            if(err) {
+              console.log("Error Selecting : %s ",err );
+            }
+
+          });
+          
           if(personRole == 'admin') {
             res.json({"message":"You are logged in","menu":"Login, Logout, Update contact information, Modify products, View Users, View products","Session ID":""+req.sessionID});
           }

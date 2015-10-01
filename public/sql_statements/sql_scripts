@@ -16,18 +16,19 @@ create table user_credentials (
 	username varchar(20),
 	password varchar(15),
 	role varchar(20),
+	sessionId varchar(50),
 	PRIMARY KEY (id),
 	UNIQUE (username)
 );
 
-insert into user_credentials (firstname,lastname,address,city,state,zip,email,username,password,role) values 
-("Henry","Smith","Centre Avenue","Pittsburgh","PA","15213","henry@gmail.com","hsmith","smith","customer");
+insert into user_credentials (firstname,lastname,address,city,state,zip,email,username,password,role,sessionId) values 
+("Henry","Smith","Centre Avenue","Pittsburgh","PA","15213","henry@gmail.com","hsmith","smith","customer","");
 
-insert into user_credentials (firstname,lastname,address,city,state,zip,email,username,password,role) values 
-("Tim","Bucktoo","Centre Avenue","Pittsburgh","PA","15213","tbucktoo@gmail.com","tbucktoo","bucktoo","customer");
+insert into user_credentials (firstname,lastname,address,city,state,zip,email,username,password,role,sessionId) values 
+("Tim","Bucktoo","Centre Avenue","Pittsburgh","PA","15213","tbucktoo@gmail.com","tbucktoo","bucktoo","customer","");
 
-insert into user_credentials (firstname,lastname,address,city,state,zip,email,username,password,role) values 
-("Jenny","Admin","Centre Avenue","Pittsburgh","PA","15213","jenny@gmail.com","jadmin","admin","admin");
+insert into user_credentials (firstname,lastname,address,city,state,zip,email,username,password,role,sessionId) values 
+("Jenny","Admin","Centre Avenue","Pittsburgh","PA","15213","jenny@gmail.com","jadmin","admin","admin","");
 
 create table product_information (
 	product_id varchar(5) PRIMARY KEY,

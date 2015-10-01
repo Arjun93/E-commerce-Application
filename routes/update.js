@@ -3,24 +3,24 @@ var router = express.Router();
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({
-  //host     : 'localhost',
-  host     : 'quizapp.ccwtwgtut47e.us-east-1.rds.amazonaws.com',
-  port : '3306',
+  host     : 'localhost',
+  //host     : 'quizapp.ccwtwgtut47e.us-east-1.rds.amazonaws.com',
+  //port : '3306',
   user     : 'root',
   password : '12312312',
   database :'ecommerce',
 });
 
 router.post('/', function(req, res, next) {
-  var userInputSessionId = req.body.sessionID;
-  var userSessionId = req.sessionID;
-  console.log(userInputSessionId);
-  console.log(userSessionId);
-  var isInputFormatCorrect = true;
-  var sessionUserName = req.session.endUser;
-  
-  if (typeof sessionUserName != 'undefined') {
-  	var currentUser = req.session.endUser;
+	/*var userInputSessionId = req.body.sessionID;
+	var userSessionId = req.sessionID;
+	console.log(userInputSessionId);
+	console.log(userSessionId);*/
+	var isInputFormatCorrect = true;
+	var sessionUserName = req.session.endUser;
+	var userDbSessionId;
+
+	var currentUser = req.session.endUser;
 	var firstName = req.body.fname;
 	var lastName = req.body.lname;
 	var userAddress = req.body.address;
@@ -35,63 +35,76 @@ router.post('/', function(req, res, next) {
 
 	var query = "UPDATE user_credentials SET";
 
-	if(typeof firstName != 'undefined') {
+    if(typeof firstName != 'undefined' && firstName != "") {
 		query += " firstname= '"+firstName+"',";
 	}
 
-	if(typeof lastName != 'undefined') {
+	if(typeof lastName != 'undefined' && lastName != "") {
 		query += " lastname= '"+lastName+"',";
 	}
 
-	if(typeof userAddress != 'undefined') {
+	if(typeof userAddress != 'undefined' && userAddress != "") {
 		query += " address= '"+userAddress+"',";
 	}
 
-	if(typeof userCity != 'undefined') {
+	if(typeof userCity != 'undefined' && userCity != "") {
 		query += " city= '"+userCity+"',";
 	}
 
-	if(typeof userState != 'undefined') {
+	if(typeof userState != 'undefined' && userState != "") {
 		if(userState.length != 2) {
 			isInputFormatCorrect = false;
 		}
 		query += " state= '"+userState+"',";
 	}
 
-	if(typeof userZip != 'undefined') {
+	if(typeof userZip != 'undefined' && userZip != "") {
 		if(userZip.length != 5) {
 			isInputFormatCorrect = false;
 		}
 		query += " zip= '"+userZip+"',";
 	}
 
-	if(typeof userEmail != 'undefined') {
+	if(typeof userEmail != 'undefined' && userEmail != "") {
 		query += " email= '"+userEmail+"',";
 	}
 
-	if(typeof userName != 'undefined') {
+	if(typeof userName != 'undefined' && userName != "") {
 		query += " username= '"+userName+"',";
 	}
 
-	if(typeof passWord != 'undefined') {
+	if(typeof passWord != 'undefined' && passWord != "") {
 		query += " password= '"+passWord+"',";
 	}
 
 	var finalQuery = query.substring(0,query.length-1);
-	finalQuery = finalQuery+ " WHERE username='"+currentUser+"'";
-	
-	if (isInputFormatCorrect == true) {
-		updateInformation(userName,finalQuery,req,res);
-	}
-	else {
-		console.log("Validation error");
-	    res.json({"message":"There was a problem with this action"});
-	}
-  }
-  else {
-  	console.log("User not logged in");
-  	res.json({"message":"There was a problem with this action"});
-  }
+	console.log(finalQuery);
+
+  	connection.query('SELECT * FROM user_credentials where sessionId = ?',[req.sessionID],function(err,rows) {            
+      console.log("Retrieving rows");
+      if(err) {
+        console.log("Error Selecting : %s ",err );
+        console.log("User not logged in");
+        res.json({"message":"There was a problem with this action"});
+      }
+      
+      if(rows.length > 0) {
+      	userDbSessionId = rows[0].sessionId;
+      	console.log(req.sessionId);
+      	console.log(userDbSessionId);
+      	finalQuery = finalQuery+ " WHERE sessionId='"+userDbSessionId+"'";
+	    if (isInputFormatCorrect == true) {
+			updateInformation(userName,finalQuery,req,res);
+		}
+		else {
+			console.log("Validation error");
+		    res.json({"message":"There was a problem with this action"});
+		}
+      }
+      else {
+      	res.json({"message":"User is not logged in"});
+      }
+  	});
 });
 
 function updateInformation(userName,finalQuery,req,res) {
