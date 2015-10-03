@@ -75,7 +75,7 @@ app.use(function(req, res, next) {
       error: err
     });
   });
-}*/
+}
 
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
@@ -83,7 +83,7 @@ app.use(function(err, req, res, next) {
     message: err.message,
     error: {}
   });
-});
+});*/
 
 module.exports = app;
 
