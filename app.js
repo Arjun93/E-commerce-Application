@@ -15,9 +15,11 @@ var viewuser = require('./routes/viewUser');
 var modifyProduct = require('./routes/modifyProduct');
 var viewProduct = require('./routes/getProducts');
 var connect = require("connect");
-var redis   = require("redis");
-var redisStore = require('connect-redis')(session);
-var client  = redis.createClient();
+//var redis   = require("redis");
+//var redisStore = require('connect-redis')(session);
+//var client  = redis.createClient();
+var SessionStore = require('express-mysql-session');
+
 
 var app = express();
 
@@ -29,12 +31,24 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+var storeOptions = {
+    host: 'localhost',
+    //host: 'quizapp.ccwtwgtut47e.us-east-1.rds.amazonaws.com',
+    port: 3306,
+    user: 'root',
+    password: '12312312',
+    database: 'ecommerce'
+};
+
 app.use(session({ 
-  store: new redisStore({ host: 'localhost', port: 8000, client: client,ttl :  260}),
+//  store: new redisStore({ host: 'localhost', port: 8000, client: client,ttl :  260}),
+  store: new SessionStore(storeOptions),
   secret: 'quizapplication', 
   resave: false, 
   saveUninitialized: false, 
-  rolling:true }));
+  rolling:true 
+}));
 
 app.use('/', routes);
 app.use('/users', users);
