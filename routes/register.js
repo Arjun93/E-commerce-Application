@@ -4,7 +4,7 @@ var mysql = require('mysql');
 
 var connection = mysql.createConnection({
   //host     : 'localhost',
-  host     : 'quizapp.ccwtwgtut47e.us-east-1.rds.amazonaws.com',
+  host     : 'ecommerce.ccwtwgtut47e.us-east-1.rds.amazonaws.com',
   port : '3306',
   user     : 'root',
   password : '12312312',

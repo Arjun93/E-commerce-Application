@@ -34,12 +34,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 var storeOptions = {
     //host: 'localhost',
-    host: 'quizapp.ccwtwgtut47e.us-east-1.rds.amazonaws.com',
+    host: 'ecommerce.ccwtwgtut47e.us-east-1.rds.amazonaws.com',
     port: 3306,
     user: 'root',
     password: '12312312',
     database: 'ecommerce'
 };
+
+/*app.use(session({ 
+  store: new redisStore({ host: 'localhost', port: 8000, client: client,ttl :  260}),
+  secret: 'quizapplication', 
+  resave: false, 
+  saveUninitialized: false, 
+  rolling:true 
+}));*/
+
 
 app.use(session({ 
 //  store: new redisStore({ host: 'localhost', port: 8000, client: client,ttl :  260}),
