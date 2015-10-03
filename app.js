@@ -14,6 +14,10 @@ var update = require('./routes/update');
 var viewuser = require('./routes/viewUser');
 var modifyProduct = require('./routes/modifyProduct');
 var viewProduct = require('./routes/getProducts');
+var connect = require("connect");
+var redis   = require("redis");
+var redisStore = require('connect-redis')(session);
+var client  = redis.createClient();
 
 var app = express();
 
@@ -24,7 +28,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({ secret: 'quizapplication', resave: false, saveUninitialized: false, rolling:true }));
+
+app.use(session({ 
+  store: new redisStore({ host: 'localhost', port: 8000, client: client,ttl :  260}),
+  secret: 'quizapplication', 
+  resave: false, 
+  saveUninitialized: false, 
+  rolling:true }));
+
 app.use('/', routes);
 app.use('/users', users);
 app.use('/login', login);

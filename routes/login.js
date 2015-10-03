@@ -43,11 +43,12 @@ function validate_login_credentials(userName,password,req,res) {
         console.log("Error Selecting : %s ",err );
       }
       if(rows.length > 0) {
-          req.session.cookie.maxAge = new Date(Date.now() + 900000);
-          //req.session.cookie.maxAge = new Date(Date.now() + 6000);
+          //req.session.cookie.maxAge = new Date(Date.now() + 900000);
+          req.session.cookie.maxAge = new Date(Date.now() + 25000);
           req.session.role = rows[0].role;
           var personRole = req.session.role;
           var userSessionId = req.sessionID;
+          console.log(userSessionId);
 
           connection.query('UPDATE user_credentials SET sessionId = ? WHERE username = ?',[userSessionId,userName], function(err,rows) {
 
