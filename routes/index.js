@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/health', function(req, res, next) {
-  res.render('Working');
+router.get('/', function(req, res, next) {
+  res.send('Working');
 });
 
 module.exports = router;
